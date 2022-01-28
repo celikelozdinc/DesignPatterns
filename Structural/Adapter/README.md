@@ -9,7 +9,7 @@
 + This idiom consists in writing an `abstract base class` with only virtual const methods. 
     + From that, an adapter class is derived; it’s task is that of taking one or more target instances, where the actual callbacks reside.
 
-## Usage examples 
+## WHEN DO WE NEED? 
 The **Adapter Pattern** is pretty common in C++ code. It’s very often used in systems based on some legacy code. In such cases, **Adapters** make legacy code work with modern classes.
 
 ## Identification
