@@ -7,6 +7,12 @@
 #include <memory>
 #include <utility>
 
+/**
+ * @brief Base class for all type of shapes
+ * Includes only 1 method : Conversion operator
+ * Converts to "string" works by overloading string() operator
+ * which does not have any return value
+ */
 struct Shape {
     virtual operator std::string() = 0;
 };
