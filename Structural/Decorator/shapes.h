@@ -9,12 +9,16 @@
 
 /**
  * @brief Base class for all type of shapes
+ * Interface (=Abstract) class
  * Includes only 1 method : Conversion operator
  * Converts to "string" works by overloading string() operator
  * which does not have any return value
  */
 struct Shape {
     virtual operator std::string() = 0;
+    ~Shape(){
+        std::cout << "Shape::~Shape()\n";
+    }
 };
 
 struct Circle final : Shape{
@@ -34,6 +38,10 @@ struct Circle final : Shape{
 
     uint8_t do_increase() {
         return static_cast<uint8_t>(m_radius + 1);
+    }
+
+    ~Circle(){
+        std::cout << "Circle::~Circle()\n";
     }
 };
 
@@ -55,6 +63,10 @@ struct Square final : Shape {
     uint8_t do_increase() {
         return static_cast<uint8_t>(m_side + 1);
     }
+
+    ~Square(){
+        std::cout << "Square::~Square()\n";
+    }
 };
 
 struct ColoredShape : Shape {
@@ -67,6 +79,10 @@ struct ColoredShape : Shape {
 
     operator std::string() override {
         return m_shape->operator std::string();
+    }
+
+    ~ColoredShape(){
+        std::cout << "ColoredShape::~ColoredShape()\n";
     }
 
 };
