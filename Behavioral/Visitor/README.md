@@ -7,13 +7,14 @@
 
 ## Identification
 + `visit()` and `accept()` methods 
+    + ping-pong between `visit()` and `accept()`
 + Sepearates __objects__ from __operations__ &rarr; HIGH COHESION DESIGN PRINCIPLE
 + *Runtime* *double dispatch* &rarr; we can resolve one polymorpic interface at a time, we can only resolve virtual calls on one type at the same time.
     + If you would have *compile time* **multiple-dispatch** &rarr; FUNCTION OVERLOADING
 
 # BUILD
 ```bash
-
+g++ -Wall -Wextra Behavioral/Visitor/visitors.cpp -o visitor ; ./visitor ; rm -rf visitor
 ```
 
 
