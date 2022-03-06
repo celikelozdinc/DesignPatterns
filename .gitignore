@@ -3,3 +3,4 @@ adapter
 prototype
 visitor
 build/**
+.vscode/**
