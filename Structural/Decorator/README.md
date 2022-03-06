@@ -16,6 +16,7 @@
 # BUILD
 ```bash
 g++ -Wall Structural/Decorator/wrapper.cpp -o wrapper ; ./wrapper ; rm -rf wrapper
+cd build ; make wrapper
 ```
 
 

@@ -21,6 +21,7 @@
 # BUILD
 ```bash
 g++ -Wall Creational/Prototype/prototype.cpp -o prototype ; ./prototype ; rm -rf ./prototype
+cd build ; make prototype
 ```
 
 

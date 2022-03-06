@@ -15,6 +15,7 @@
 # BUILD
 ```bash
 g++ -Wall -Wextra Behavioral/Visitor/visitors.cpp -o visitor ; ./visitor ; rm -rf visitor
+cd build ; make visitor
 ```
 
 

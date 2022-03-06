@@ -18,6 +18,7 @@ Adapter is recognizable by a `constructor which takes an instance of a different
 # BUILD
 ```bash
 g++ -Wall Structural/Adapter/adapter_via_callbacks.cpp -o adapter ; ./adapter ; rm -rf ./adapter
+cd build ; make adapter
 ```
 
 # REFERENCES
