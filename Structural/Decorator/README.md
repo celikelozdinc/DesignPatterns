@@ -1,6 +1,7 @@
 # WHY DO WE NEED?
 + Stick to `Open-Closed Principle` &rarr; Augment the functionality of existing objects without altering/rewriting existing code
 + Helps to attach additional behavior/responsibilities to an object __dynamically__.
++ Add new characteristics to objects by adding a wrapper
 
 ## WHEN DO WE NEED?
 + Once the class has `final` keyword which means the class is not further inheritable.

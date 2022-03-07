@@ -1,0 +1,1 @@
++ Restricts class to have only `1 instance`
