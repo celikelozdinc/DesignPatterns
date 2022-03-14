@@ -1,5 +1,6 @@
 # SUMMARY
-Includes brief explanations and code snippets for each of the design pattern. One can `cd` to regarding directory to see more details.
+&rarr; Reusable solutions to commonly occuring problems
+&rarr; Includes brief explanations and code snippets for each of the design pattern. One can `cd` to regarding directory to see more details. <br>
 
 + *CREATIONAL DESIGN PATTERNS*
 &rarr; Provides structure to _create objects easily_, reuse existent code.
