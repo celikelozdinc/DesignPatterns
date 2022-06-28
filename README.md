@@ -28,4 +28,5 @@ make prototype
 make visitor
 make adapter
 make decorator
+make factory
 ```
