@@ -11,7 +11,9 @@
 # BUILD
 ```bash
 cd build ; make factory
+cd build ; make virtualctor
 ```
 
 # REFERENCES
 + [Vishal Chovatiya](http://www.vishalchovatiya.com/factory-design-pattern-in-modern-cpp/)
++ [Hands-On Design Patterns with C++/Chapter 13](https://www.amazon.com.tr/Hands-Design-Patterns-problems-applications/dp/1788832566)
