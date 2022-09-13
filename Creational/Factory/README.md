@@ -12,6 +12,7 @@
 ```bash
 cd build ; make factory
 cd build ; make virtualctor
+cd build ; make dynamictyperegistry
 ```
 
 # REFERENCES
