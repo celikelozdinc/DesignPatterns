@@ -10,7 +10,8 @@
     + From that, an adapter class is derived; it’s task is that of taking one or more target instances, where the actual callbacks reside.
 
 ## WHEN DO WE NEED? 
-The **Adapter Pattern** is pretty common in C++ code. It’s very often used in systems based on some legacy code. In such cases, **Adapters** make legacy code work with modern classes.
+- The **Adapter Pattern** is pretty common in C++ code. It’s very often used in systems based on some legacy code. In such cases, **Adapters** make legacy code work with modern classes.
+- Converts interfaces, communicates incompatible interfaces
 
 ## Identification
 Adapter is recognizable by a `constructor which takes an instance of a different abstract/interface type`. When the adapter receives a call to any of its methods, it translates parameters to the appropriate format and then directs the call to one or several methods of the `wrapped object`.
@@ -19,6 +20,8 @@ Adapter is recognizable by a `constructor which takes an instance of a different
 ```bash
 g++ -Wall Structural/Adapter/adapter_via_callbacks.cpp -o adapter ; ./adapter ; rm -rf ./adapter
 cd build ; make adapter
+g++ -Wall Structural/Adapter/queue.cpp -o queue ; ./queue ; rm -rf ./queue
+cd build ; make queueadapter
 ```
 
 # REFERENCES

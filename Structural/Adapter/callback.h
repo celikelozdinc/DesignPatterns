@@ -6,6 +6,7 @@
 
 /**
  * @brief Base class for the callback mechanism
+ * IS-A abstract class
  * 
  */
 struct CallbackInterface {

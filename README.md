@@ -29,4 +29,6 @@ make visitor
 make adapter
 make decorator
 make factory
+make virtualctor
+make dynamictyperegistry
 ```
