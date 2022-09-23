@@ -8,10 +8,11 @@
     + However, when implementing a callback strategy, it’s preferable to use the `adapter idiom`.
 + This idiom consists in writing an `abstract base class` with only virtual const methods. 
     + From that, an adapter class is derived; it’s task is that of taking one or more target instances, where the actual callbacks reside.
++ `Transforms` the existing interface of a class to our needs for a different interface.
 
 ## WHEN DO WE NEED? 
 - The **Adapter Pattern** is pretty common in C++ code. It’s very often used in systems based on some legacy code. In such cases, **Adapters** make legacy code work with modern classes.
-- Converts interfaces, communicates incompatible interfaces
+- `Converts` interfaces, communicates incompatible interfaces
 
 ## Identification
 Adapter is recognizable by a `constructor which takes an instance of a different abstract/interface type`. When the adapter receives a call to any of its methods, it translates parameters to the appropriate format and then directs the call to one or several methods of the `wrapped object`.
