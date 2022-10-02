@@ -15,7 +15,9 @@
 + *BEHAVIORAL DESIGN PATTERNS*
 &rarr; Deal with the `assignment of responsibilities` between objects.  <br>
 &rarr; Make the interactions between the objects easy & `loosely coupled`. <br>
-&rarr; Assign `responsibilities` between objects, take care of *communication*
+&rarr; Assign `responsibilities` between objects, take care of *communication* <br>
+
+&rarr; Describes a way for `communicating` between different objects <br>
 
 # BUILD
 [Generating multiple binaries](https://medium.com/@mfkhao2009/clion-one-project-multiple-executable-file-4091d07c3936)
