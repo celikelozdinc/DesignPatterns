@@ -5,7 +5,7 @@
 
 struct Socket {
 public:
-    void Send() {
+    void Send() {  //=> public interface
         OpenConnection();
         SendCustomData();
         CloseConnection();
@@ -20,7 +20,7 @@ public:
     }
 
 protected:
-    virtual void SendCustomData() {
+    virtual void SendCustomData() {  //=> customization point
         std::cout << "Socket::SendCustomData()\n";
     }
 
