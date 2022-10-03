@@ -15,5 +15,6 @@
 ## Identification
 
 # BUILD
+cd build ; make templatemethod
 
 # REFERENCES
