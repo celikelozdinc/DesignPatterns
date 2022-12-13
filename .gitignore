@@ -4,3 +4,5 @@ prototype
 visitor
 build/**
 .vscode/**
+.idea/**
+cmake-build-debug/**

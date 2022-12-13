@@ -17,5 +17,5 @@ add_executable(dynamictyperegistry Creational/Factory/dynamic_type_registry.cpp)
 add_executable(adapter Structural/Adapter/adapter_via_callbacks.cpp)
 add_executable(queueadapter Structural/Adapter/queue.cpp)
 add_executable(decorator Structural/Decorator/wrapper.cpp)
-
+add_executable(observer Behavioral/Observer/observer.cpp)
 
