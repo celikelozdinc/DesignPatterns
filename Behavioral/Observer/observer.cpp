@@ -13,12 +13,12 @@ void Publisher::notifySubscribers() const {
     }
 }
 
-Subscriber::Subscriber(const std::string i) : indicator(i) {
+Subscriber::Subscriber(std::string&& i) : indicator(std::move(i)) {
     std::cout << "Subscriber::Subscriber\n";
 }
 
-ConcreteSubscriber::ConcreteSubscriber(std::shared_ptr<Publisher> pub, const std::string& i) :
-    publisher(pub), Subscriber(i) {
+ConcreteSubscriber::ConcreteSubscriber(std::shared_ptr<Publisher> pub, std::string&& i) :
+        Subscriber(std::move(i)), publisher(pub) {
     std::cout << "ConcreteSubscriber::ConcreteSubscriber()\n";
     pub->registerSubscriber(std::bind(&ConcreteSubscriber::notify, this));
 }
@@ -32,7 +32,7 @@ void ConcreteSubscriber::notify() const {
 }
 
 int main() {
-    std::shared_ptr<Publisher> pub = std::make_shared<Publisher>();
+    auto pub = std::make_shared<Publisher>();
     std::cout << "# subscribers that use same publisher : " << pub.use_count() << "\n";
     ConcreteSubscriber sub1{pub, "ConcreteSubscriber1"};
     std::cout << "# subscribers that use same publisher : " << pub.use_count() << "\n";

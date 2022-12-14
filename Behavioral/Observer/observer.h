@@ -24,7 +24,7 @@ private:
  */
 class Subscriber {
 public:
-    Subscriber(const std::string i);
+    explicit Subscriber(std::string&& i);
     virtual void notify() const = 0;
     virtual ~Subscriber();
 protected:
@@ -37,7 +37,7 @@ protected:
  */
 class ConcreteSubscriber : public Subscriber {
 public:
-    ConcreteSubscriber(std::shared_ptr<Publisher> pub, const std::string& i);
+    ConcreteSubscriber(std::shared_ptr<Publisher> pub, std::string&& i);
     void notify() const override;
 private:
     std::shared_ptr<Publisher> publisher;
