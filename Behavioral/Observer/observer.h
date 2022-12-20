@@ -1,7 +1,7 @@
 #ifndef BEHAVIORAL_OBSERVER_OBSERVER_H
 #define BEHAVIORAL_OBSERVER_OBSERVER_H
 
-#include <vector>
+#include <unordered_map>
 #include <functional>
 #include <memory>
 #include <string>
@@ -11,12 +11,11 @@
  */
 class Publisher {
 public:
-    void registerSubscriber(std::function<void(void)>);
+    void registerSubscriber(std::string&&, std::function<void(void)>);
+    void unregisterSubscriber(std::string&&);
     void notifySubscribers() const;
-    //TODO: need to deregister some subscribers
 private:
-    //TODO: need a key/value map
-    std::vector<std::function<void(void)>> subscriberCollection;
+    std::unordered_map<std::string, std::function<void(void)>> subscriberCollection;
 };
 
 /**
@@ -37,7 +36,7 @@ protected:
  */
 class ConcreteSubscriber : public Subscriber {
 public:
-    ConcreteSubscriber(std::shared_ptr<Publisher> pub, std::string&& i);
+    ConcreteSubscriber(std::string&& key, std::shared_ptr<Publisher> pub, std::string&& i);
     void notify() const override;
 private:
     std::shared_ptr<Publisher> publisher;
