@@ -67,11 +67,44 @@ private:
     std::unique_ptr<Data> data;
 };
 
-struct Derived : CopyablePolymorhic {
-    char id() const {
+struct CopyableDerived : CopyablePolymorhic {
+    char id() const override {
         return 'D';
     }
 };
 
+class MoveablePolymorphic {
+public:
+    MoveablePolymorphic() : data{new Data{}} {
+        std::cout << "__Constructed MoveablePolymorphic at : " << this << '\n';
+    }
+
+    ~MoveablePolymorphic() {
+        if (nullptr != data) {
+            delete data;
+        }
+        std::cout << "__Destructed MoveablePolymorphic from : " << this << '\n';
+    }
+
+    MoveablePolymorphic(MoveablePolymorphic&& other) noexcept : data(other.data) {
+        other.data = nullptr;
+    }
+
+    virtual void p() const {
+        data->p();
+    }
+
+    virtual char id() const {
+        return 'b';
+    }
+private:
+    Data* data;
+};
+
+struct MoveableDerived : MoveablePolymorphic {
+    char id() const override {
+        return 'd';
+    }
+};
 
 #endif
