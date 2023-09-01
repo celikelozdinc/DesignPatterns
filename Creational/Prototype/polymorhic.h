@@ -107,4 +107,54 @@ struct MoveableDerived : MoveablePolymorphic {
     }
 };
 
+class Container {
+public:
+    Container() : data{new Data{}} {
+        data->d() = 'C';
+        std::cout << "______Constructed Container at : " << this << '\n';
+    }
+
+    ~Container() {
+        delete data;
+        std::cout << "______Destructed Container from : " << this << '\n';
+    }
+
+    Container(const Container& other) : data(new Data{}){
+        data->d() = other.id();
+        std::cout << "______Copy Constructed Container at : " << this << '\n';
+    }
+
+    virtual std::unique_ptr<Container> clone() const {
+        return std::make_unique<Container>(*this);
+    }
+
+    virtual char id() const {
+        return data->d();
+    }
+
+protected:
+    Data* data;
+};
+
+struct List : Container {
+    List()  {
+        data->d() = 'L';
+        std::cout << "________Constructed List at : " << this << '\n';
+    }
+
+    ~List() {
+        std::cout << "________Destructed List from : " << this << '\n';
+    }
+
+
+    std::unique_ptr<Container> clone() const override{
+        return std::make_unique<List>(*this);
+    }
+
+    char id() const override {
+        return data->d();
+    }
+};
+
+
 #endif
